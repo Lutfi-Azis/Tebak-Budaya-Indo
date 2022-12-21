@@ -30,11 +30,13 @@ const Header: FC<Props> = (props) => {
     <Flex minWidth="max-content" alignItems="center" gap="2">
       <Box p="2">
         <Link href="/">
-          <Heading size="md">Tebak Budaya</Heading>
+          <Heading size="md" fontFamily="Lobster" fontWeight={400}>
+            Tebak Budaya
+          </Heading>
         </Link>
       </Box>
       <Spacer />
-      <ButtonGroup>
+      <ButtonGroup colorScheme="gray">
         <Button href="/sign-in">Masuk</Button>
         <Button href="/register">Daftar</Button>
       </ButtonGroup>

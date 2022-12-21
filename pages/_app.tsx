@@ -1,10 +1,30 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  extendTheme,
+  baseTheme,
+  withDefaultColorScheme,
+} from "@chakra-ui/react";
+
+const theme = extendTheme(
+  {
+    colors: {
+      primary: baseTheme.colors.orange,
+      secondary: baseTheme.colors.green,
+    },
+    fonts: {
+      body: "Montserrat, system-ui, sans-serif",
+    },
+  },
+  withDefaultColorScheme({
+    colorScheme: "primary",
+  })
+);
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
     </ChakraProvider>
   );

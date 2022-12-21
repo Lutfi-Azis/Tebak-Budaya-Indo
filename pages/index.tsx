@@ -1,7 +1,12 @@
+import { Heading, Text, Button, useToken } from "@chakra-ui/react";
 import Head from "../components/Head";
 import Header from "../components/Header";
 
 export default function Home() {
+  const [primary600, primary800] = useToken("colors", [
+    "primary.600",
+    "primary.800",
+  ]);
   return (
     <>
       <Head
@@ -9,12 +14,23 @@ export default function Home() {
         description="Halaman utama permainan Tebak Budaya"
       />
       <Header />
-      <section>
+      <section style={{ textAlign: "center" }}>
         <header>
-          <h1>Tebak Budaya</h1>
+          <Heading
+            as="h1"
+            size="4xl"
+            fontFamily="Lobster"
+            fontWeight={400}
+            py={16}
+            color={primary800}
+          >
+            Tebak Budaya
+          </Heading>
         </header>
-        <p>Mulai mengasah ilmu kebudayaanmu dengan bermain!</p>
-        <a>MAIN</a>
+        <Text color={primary600} fontSize="xl" pb={8}>
+          Mulai mengasah ilmu kebudayaanmu dengan bermain!
+        </Text>
+        <Button size="lg">MAIN</Button>
       </section>
     </>
   );
