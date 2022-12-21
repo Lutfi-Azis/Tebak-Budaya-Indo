@@ -14,13 +14,20 @@ type Props = {
   title: string;
 };
 
-const GanenideCard: FC<Props> = (props) => {
-  const [borderColor, titleColor] = useToken("colors", [
+const GamemodeCard: FC<Props> = (props) => {
+  const [borderColor, hoverBorderColor, titleColor] = useToken("colors", [
     "secondary.200",
+    "primary.300",
     "secondary.800",
   ]);
   return (
-    <Card width={300} borderColor={borderColor} borderWidth={1}>
+    <Card
+      width={300}
+      borderColor={borderColor}
+      borderWidth={2}
+      cursor="pointer"
+      _hover={{ borderColor: hoverBorderColor }}
+    >
       <CardBody p={0}>
         <Image src={props.src} alt={props.alt} />
       </CardBody>
@@ -33,4 +40,4 @@ const GanenideCard: FC<Props> = (props) => {
   );
 };
 
-export default GanenideCard;
+export default GamemodeCard;

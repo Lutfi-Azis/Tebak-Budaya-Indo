@@ -39,5 +39,6 @@ export default function Home() {
         </Link>
       </section>
     </>
+    // TODO: Add a leaderboard
   );
 }
