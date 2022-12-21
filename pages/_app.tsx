@@ -14,6 +14,7 @@ const theme = extendTheme(
       secondary: baseTheme.colors.green,
     },
     fonts: {
+      heading: "Montserrat, Georgia, serif",
       body: "Montserrat, system-ui, sans-serif",
     },
   },

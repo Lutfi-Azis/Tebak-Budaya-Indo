@@ -1,6 +1,8 @@
-import { Heading, Text, Button, useToken } from "@chakra-ui/react";
+import Link from "next/link";
+import { Heading, Button, useToken } from "@chakra-ui/react";
 import Head from "../components/Head";
 import Header from "../components/Header";
+import Description from "../components/Description";
 
 export default function Home() {
   const [primary600, primary800] = useToken("colors", [
@@ -27,10 +29,14 @@ export default function Home() {
             Tebak Budaya
           </Heading>
         </header>
-        <Text color={primary600} fontSize="xl" pb={8}>
+        <Description>
           Mulai mengasah ilmu kebudayaanmu dengan bermain!
-        </Text>
-        <Button size="lg">MAIN</Button>
+        </Description>
+        <Link href="/play/selection" passHref legacyBehavior>
+          <Button as="a" size="lg">
+            MAIN
+          </Button>
+        </Link>
       </section>
     </>
   );
