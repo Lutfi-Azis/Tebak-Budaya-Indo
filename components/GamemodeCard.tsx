@@ -1,5 +1,5 @@
+import { useRouter } from "next/router";
 import {
-  Card,
   CardBody,
   CardFooter,
   Heading,
@@ -7,27 +7,24 @@ import {
   useToken,
 } from "@chakra-ui/react";
 import { FC } from "react";
+import ClickableCard from "./ClickableCard";
 
 type Props = {
   src: string;
   alt: string;
   title: string;
+  href?: string;
 };
 
 const GamemodeCard: FC<Props> = (props) => {
-  const [borderColor, hoverBorderColor, titleColor] = useToken("colors", [
-    "secondary.200",
-    "primary.300",
-    "secondary.800",
-  ]);
+  const router = useRouter();
+  const [titleColor] = useToken("colors", ["secondary.800"]);
+  const handleClick = () => {
+    if (props.href) router.push(props.href);
+  };
+
   return (
-    <Card
-      width={300}
-      borderColor={borderColor}
-      borderWidth={2}
-      cursor="pointer"
-      _hover={{ borderColor: hoverBorderColor }}
-    >
+    <ClickableCard width={300} onClick={handleClick}>
       <CardBody p={0}>
         <Image src={props.src} alt={props.alt} />
       </CardBody>
@@ -36,7 +33,7 @@ const GamemodeCard: FC<Props> = (props) => {
           {props.title}
         </Heading>
       </CardFooter>
-    </Card>
+    </ClickableCard>
   );
 };
 
