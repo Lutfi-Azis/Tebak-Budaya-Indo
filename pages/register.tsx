@@ -1,18 +1,17 @@
 import NextLink from "next/link";
 import {
   Button,
-  Container,
   FormControl,
   FormLabel,
   Flex,
   Input,
   Link,
   Stack,
-  Heading,
   Text,
 } from "@chakra-ui/react";
 import Head from "../components/Head";
 import Header from "../components/Header";
+import FormPage from "../components/FormPage";
 
 export default function Register() {
   return (
@@ -22,11 +21,7 @@ export default function Register() {
         description="Pemilihan mode permainan Tebak Budaya"
       />
       <Header />
-      <Container textAlign="center" pb={10}>
-        <Heading>Buatlah Akun</Heading>
-        <Text>untuk melacak perkembanganmu!</Text>
-      </Container>
-      <Container maxW="md">
+      <FormPage heading="Buatlah Akun" caption="untuk melacak perkembanganmu!">
         <form>
           <Stack spacing={4}>
             <FormControl>
@@ -58,7 +53,7 @@ export default function Register() {
             </Flex>
           </Stack>
         </form>
-      </Container>
+      </FormPage>
     </>
   );
 }

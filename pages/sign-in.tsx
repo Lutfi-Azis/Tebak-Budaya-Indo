@@ -1,7 +1,6 @@
 import {
   Button,
   Checkbox,
-  Container,
   FormControl,
   FormLabel,
   Flex,
@@ -9,9 +8,8 @@ import {
   Input,
   Link,
   Stack,
-  Heading,
-  Text,
 } from "@chakra-ui/react";
+import FormPage from "../components/FormPage";
 import Head from "../components/Head";
 import Header from "../components/Header";
 
@@ -20,11 +18,10 @@ export default function SignIn() {
     <>
       <Head title="Masuk" description="Pemilihan mode permainan Tebak Budaya" />
       <Header />
-      <Container textAlign="center" pb={10}>
-        <Heading>Masuk ke Akunmu</Heading>
-        <Text>untuk pengalaman yang maksimal!</Text>
-      </Container>
-      <Container maxW="md">
+      <FormPage
+        heading="Masuk ke Akunmu"
+        caption="untuk pengalaman yang maksimal!"
+      >
         <form>
           <Stack spacing={4}>
             <FormControl>
@@ -45,7 +42,7 @@ export default function SignIn() {
             </Button>
           </Stack>
         </form>
-      </Container>
+      </FormPage>
     </>
   );
 }
