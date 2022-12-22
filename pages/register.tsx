@@ -18,7 +18,7 @@ export default function Register() {
   return (
     <>
       <Head
-        title="Tebak Budaya"
+        title="Daftar"
         description="Pemilihan mode permainan Tebak Budaya"
       />
       <Header />

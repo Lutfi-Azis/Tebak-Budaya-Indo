@@ -7,9 +7,11 @@ type Props = PropsWithChildren<{
 }>;
 
 const Head: FC<Props> = (props) => {
+  if (props.title) var title = props.title + " - Tebak Budaya";
+  else var title = "Tebak Budaya";
   return (
     <NextHead>
-      <title>{props.title || "Tebak Budaya"}</title>
+      <title>{title}</title>
       {props.description && (
         <meta name="description" content={props.description} />
       )}

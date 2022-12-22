@@ -11,10 +11,7 @@ export default function Home() {
   ]);
   return (
     <>
-      <Head
-        title="Tebak Budaya"
-        description="Halaman utama permainan Tebak Budaya"
-      />
+      <Head description="Halaman utama permainan Tebak Budaya" />
       <Header />
       <section style={{ textAlign: "center" }}>
         <header>

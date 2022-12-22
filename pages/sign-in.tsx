@@ -18,10 +18,7 @@ import Header from "../components/Header";
 export default function SignIn() {
   return (
     <>
-      <Head
-        title="Tebak Budaya"
-        description="Pemilihan mode permainan Tebak Budaya"
-      />
+      <Head title="Masuk" description="Pemilihan mode permainan Tebak Budaya" />
       <Header />
       <Container textAlign="center" pb={10}>
         <Heading>Masuk ke Akunmu</Heading>
