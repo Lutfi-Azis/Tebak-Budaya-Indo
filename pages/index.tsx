@@ -29,7 +29,7 @@ export default function Home() {
         <Description>
           Mulai mengasah ilmu kebudayaanmu dengan bermain!
         </Description>
-        <Link href="/play/selection" passHref legacyBehavior>
+        <Link href="/play/selection/gamemode" passHref legacyBehavior>
           <Button as="a" size="lg">
             MAIN
           </Button>
