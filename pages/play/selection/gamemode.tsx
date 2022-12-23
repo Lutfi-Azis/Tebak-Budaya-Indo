@@ -21,7 +21,7 @@ export default function Home() {
             }
             alt="Gedung tradisional di Bali."
             title="Tebak Wilayah"
-            href={process.env.NEXT_PUBLIC_HOST + "/play/area/package-selection"}
+            href={process.env.NEXT_PUBLIC_HOST + "/play/selection/package/area"}
           />
           <GamemodeCard
             src={
@@ -31,7 +31,7 @@ export default function Home() {
             alt="Sepasang pria dan wanita dengan pakaian adat."
             title="Tebak Baju Adat"
             href={
-              process.env.NEXT_PUBLIC_HOST + "/play/clothing/package-selection"
+              process.env.NEXT_PUBLIC_HOST + "/play/selection/package/clothing"
             }
           />
         </Wrap>
