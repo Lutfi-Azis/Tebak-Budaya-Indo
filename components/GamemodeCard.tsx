@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import {
   CardBody,
   CardFooter,
@@ -17,14 +16,10 @@ type Props = {
 };
 
 const GamemodeCard: FC<Props> = (props) => {
-  const router = useRouter();
   const [titleColor] = useToken("colors", ["secondary.800"]);
-  const handleClick = () => {
-    if (props.href) router.push(props.href);
-  };
 
   return (
-    <ClickableCard width={300} onClick={handleClick}>
+    <ClickableCard width={300} href={props.href}>
       <CardBody p={0}>
         <Image src={props.src} alt={props.alt} />
       </CardBody>
