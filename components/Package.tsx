@@ -7,7 +7,11 @@ type Props = QuestionPackage;
 
 const Package: FC<Props> = (props) => {
   return (
-    <ClickableCard w={300} shadow="md">
+    <ClickableCard
+      w={300}
+      shadow="md"
+      href={process.env.NEXT_PUBLIC_HOST + "/play/package/" + props.id}
+    >
       <CardBody p={0}>
         <Image src={props.imageSrc} alt={props.imageAlt} />
       </CardBody>

@@ -1,4 +1,5 @@
 type QuestionPackage = {
+  id: number;
   title: string;
   description: string;
   author: string;

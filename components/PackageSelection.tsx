@@ -16,7 +16,7 @@ const PackageSelection: FC<Props> = (props) => {
       </Heading>
       <Wrap justify="center" pb={2}>
         {props.packages.map((p) => (
-          <WrapItem key={p.title}>
+          <WrapItem key={p.id}>
             <Package {...p} />
           </WrapItem>
         ))}
