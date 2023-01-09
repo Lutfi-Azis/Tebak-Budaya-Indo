@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getQuestionPackages } from "../../../controllers";
+import { getQuestionPackages } from "../../../models";
 import QuestionPackage from "../../../types/QuestionPackage";
 
 type Data = QuestionPackage[];

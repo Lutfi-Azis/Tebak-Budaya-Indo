@@ -5,7 +5,7 @@ import {
   getQuestionPackage,
   getQuestionPackages,
   getQuestionsOfPackage,
-} from "../../../controllers";
+} from "../../../models";
 import Question from "../../../types/Question";
 import QuestionPackage from "../../../types/QuestionPackage";
 

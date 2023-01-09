@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "../../../../components/Head";
 import Header from "../../../../components/Header";
 import PackageSelection from "../../../../components/PackageSelection";
-import { getQuestionPackages } from "../../../../controllers";
+import { getQuestionPackages } from "../../../../models";
 import QuestionPackage from "../../../../types/QuestionPackage";
 
 type Props = { packages?: QuestionPackage[] };
