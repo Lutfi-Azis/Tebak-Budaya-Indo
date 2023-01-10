@@ -1,16 +1,21 @@
 import { FC, PropsWithChildren } from "react";
-import { Text, useToken } from "@chakra-ui/react";
+import { Box, ChakraProps, Text, useToken } from "@chakra-ui/react";
 
-type Props = PropsWithChildren<{}>;
+type Props = PropsWithChildren<{}> & ChakraProps;
 
-const Description: FC<Props> = (props) => {
+const Description: FC<Props> = ({
+  children,
+  height = 100,
+  fontSize = "xl",
+  ...props
+}) => {
   const [primary600] = useToken("colors", ["primary.600"]);
   return (
-    <div style={{ height: 100 }}>
-      <Text color={primary600} fontSize="xl">
-        {props.children}
+    <Box height={height} {...props}>
+      <Text color={primary600} fontSize={fontSize}>
+        {children}
       </Text>
-    </div>
+    </Box>
   );
 };
 

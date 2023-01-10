@@ -1,6 +1,7 @@
+import { Box } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "../../../components/Head";
-import Header from "../../../components/Header";
+import Player from "../../../components/Player";
 import {
   getQuestionPackage,
   getQuestionPackages,
@@ -16,16 +17,15 @@ type Props = {
 
 export default function PlayingPage(props: Props) {
   return (
-    <>
+    <Box display="flex" flexFlow="column" height="100%">
       <Head
         title={props.package.title}
         description={props.package.description}
       />
-      <Header />
-      {props.questions.map((q) => (
-        <p key={q.id}>{q.imageSrc}</p>
-      ))}
-    </>
+      <Box flex="1 1 auto">
+        <Player questions={props.questions} />
+      </Box>
+    </Box>
   );
 }
 
