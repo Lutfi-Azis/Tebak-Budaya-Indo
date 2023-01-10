@@ -18,7 +18,7 @@ export async function getQuestionsOfPackage(
         " FROM `question`" +
         " JOIN `question_package_relation`" +
         " ON `question`.`id` = `question_package_relation`.`question_id`" +
-        " WHERE `question_package_relation`.`question_id` = ?",
+        " WHERE `question_package_relation`.`question_package_id` = ?",
       [questionPackageId]
     )
   );
