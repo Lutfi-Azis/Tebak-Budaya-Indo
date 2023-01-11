@@ -4,26 +4,14 @@
 }
 .indonesia_svg__indonesia-map a polygon,
 .indonesia_svg__indonesia-map a path {
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  -webkit-transition-timing-function: ease;
+  transition-property: fill;
+  transition-duration: 0.1s;
   transition-timing-function: ease;
 }
-.indonesia_svg__indonesia-map a:hover,
-.indonesia_svg__indonesia-map a:focus {
+.indonesia_svg__indonesia-map a {
   cursor: pointer;
 }
-.indonesia_svg__indonesia-map a:hover polygon,
 .indonesia_svg__indonesia-map a:hover path,
-.indonesia_svg__indonesia-map a:focus polygon,
 .indonesia_svg__indonesia-map a:focus path {
-  opacity: 0.25;
+  fill: #48bb78;
 }

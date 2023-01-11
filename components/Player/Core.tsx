@@ -7,6 +7,7 @@ type Props = { question: Question; onAnswer?: (answer: string) => void };
 
 const Core: FC<Props> = ({ question, onAnswer = () => {} }) => {
   const [mapVisible, setMapVisibility] = useState(false);
+  const toggleMapVisibility = () => setMapVisibility(!mapVisible);
   return (
     <Box
       height="100vh"
@@ -15,21 +16,33 @@ const Core: FC<Props> = ({ question, onAnswer = () => {} }) => {
       alignItems="center"
       justifyContent="center"
     >
-      <Image
-        src={process.env.NEXT_PUBLIC_HOST + question.imageSrc}
-        alt="Soal tebak gambar"
-        maxHeight="100%"
-      />
       <Button
         zIndex={3}
         position="absolute"
         bottom={20}
         right={20}
-        onClick={() => setMapVisibility(!mapVisible)}
+        size="lg"
+        onClick={toggleMapVisibility}
       >
-        JAWAB
+        PETA
       </Button>
-      {mapVisible && <Map />}
+      {mapVisible && (
+        <Map
+          onClose={toggleMapVisibility}
+          onAnswer={() => {
+            toggleMapVisibility();
+            onAnswer();
+          }}
+        />
+      )}
+      {mapVisible && (
+        <div className="player__curtain" onClick={toggleMapVisibility} />
+      )}
+      <Image
+        src={process.env.NEXT_PUBLIC_HOST + question.imageSrc}
+        alt="Soal tebak gambar"
+        maxHeight="100%"
+      />
     </Box>
   );
 };
