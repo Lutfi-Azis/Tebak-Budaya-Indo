@@ -1,7 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useState } from "react";
 import Head from "../../../components/Head";
-import Player from "../../../components/Player";
+import Header from "../../../components/Header";
+import Player, { Status } from "../../../components/Player";
 import {
   getQuestionPackage,
   getQuestionPackages,
@@ -16,16 +18,25 @@ type Props = {
 };
 
 export default function PlayingPage(props: Props) {
+  const [headerVisible, setHeaderVisibility] = useState(false);
   return (
-    <Box display="flex" flexFlow="column" height="100%">
-      <Head
-        title={props.package.title}
-        description={props.package.description}
-      />
-      <Box flex="1 1 auto">
-        <Player questions={props.questions} />
+    <>
+      {headerVisible && <Header />}
+      <Box display="flex" flexFlow="column" height="100%">
+        <Head
+          title={props.package.title}
+          description={props.package.description}
+        />
+        <Box flex="1 1 auto">
+          <Player
+            questions={props.questions}
+            onStatusChange={(status) =>
+              setHeaderVisibility(status === Status.Over)
+            }
+          />
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
 

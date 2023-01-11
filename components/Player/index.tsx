@@ -1,11 +1,12 @@
 import { Component } from "react";
 import Question from "../../types/Question";
 import Core from "./Core";
+import EndScreen from "./EndScreen";
 import Unstarted from "./Unstarted";
 
 type Props = {
   questions: Question[];
-  onFinish?: (result: Result) => void;
+  onStatusChange?: (status: Status) => void;
 };
 
 type State = {
@@ -17,13 +18,11 @@ type State = {
   status: Status;
 };
 
-enum Status {
+export enum Status {
   Unstarted,
   Playing,
   Over,
 }
-
-type Result = {};
 
 class Player extends Component<Props, State> {
   state = {
@@ -34,13 +33,15 @@ class Player extends Component<Props, State> {
 
   handleStartClick = () => {
     this.setState({ status: Status.Playing });
+    this.props.onStatusChange?.(Status.Playing);
   };
 
   handleAnswer = (answer: string) => {
     this.setState({ answers: [...this.state.answers, answer] });
-    if (this.state.index >= this.props.questions.length - 1)
+    if (this.state.index >= this.props.questions.length - 1) {
       this.setState({ status: Status.Over });
-    else this.setState({ index: this.state.index + 1 });
+      this.props.onStatusChange?.(Status.Over);
+    } else this.setState({ index: this.state.index + 1 });
   };
 
   render() {
@@ -55,7 +56,12 @@ class Player extends Component<Props, State> {
           />
         );
       default:
-        return <>Over</>;
+        return (
+          <EndScreen
+            answers={this.state.answers}
+            questions={this.props.questions}
+          />
+        );
     }
   }
 }

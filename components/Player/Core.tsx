@@ -29,9 +29,9 @@ const Core: FC<Props> = ({ question, onAnswer = () => {} }) => {
       {mapVisible && (
         <Map
           onClose={toggleMapVisibility}
-          onAnswer={() => {
+          onAnswer={(answer) => {
             toggleMapVisibility();
-            onAnswer();
+            onAnswer(answer);
           }}
         />
       )}
