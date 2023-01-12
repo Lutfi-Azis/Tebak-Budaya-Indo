@@ -16,7 +16,7 @@ const Head: FC<Props> = (props) => {
         <meta name="description" content={props.description} />
       )}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href={process.env.NEXT_PUBLIC_HOST + "/favicon.ico"} />
       {props.children}
     </NextHead>
   );
