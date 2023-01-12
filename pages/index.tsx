@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { Heading, Button, useToken, Container } from "@chakra-ui/react";
+import { Heading, useToken, Container, ButtonGroup } from "@chakra-ui/react";
 import Head from "../components/Head";
 import Header from "../components/Header";
 import Description from "../components/Description";
 import styles from "./index.module.css";
 import ReviewCarousel from "../components/ReviewCarousel";
 import { REVIEWS } from "../constants";
+import ButtonLink from "../components/ButtonLink";
 
 export default function Home() {
   const [primary800] = useToken("colors", ["primary.800"]);
@@ -29,11 +29,19 @@ export default function Home() {
         <Description>
           Mulai mengasah ilmu kebudayaanmu dengan bermain!
         </Description>
-        <Link href="/play/selection/gamemode" passHref legacyBehavior>
-          <Button as="a" size="lg">
+        <ButtonGroup>
+          <ButtonLink href="/play/selection/gamemode" size="lg">
             MAIN
-          </Button>
-        </Link>
+          </ButtonLink>
+          <ButtonLink
+            href="/tournament/create"
+            size="lg"
+            variant="outline"
+            colorScheme="secondary"
+          >
+            Buat Lomba
+          </ButtonLink>
+        </ButtonGroup>
       </section>
       <Container w={["100%", "80%", "50%"]} py={4}>
         <ReviewCarousel reviews={REVIEWS} />

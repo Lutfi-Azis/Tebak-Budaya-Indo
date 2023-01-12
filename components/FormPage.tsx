@@ -1,28 +1,28 @@
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
+import { Container, Heading, Text, ContainerProps } from "@chakra-ui/react";
 import { FC, PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
-  heading: string;
-  caption: string;
-}>;
+  heading?: string;
+  caption?: string;
+}> &
+  ContainerProps;
 
-const FormPage: FC<Props> = (props) => {
+const FormPage: FC<Props> = ({ heading, caption, ...props }) => {
   return (
     <>
       <Container textAlign="center" pb={10}>
-        <Heading>{props.heading}</Heading>
-        <Text>{props.caption}</Text>
+        {heading && <Heading>{heading}</Heading>}
+        {caption && <Text>{caption}</Text>}
       </Container>
       <Container
-        maxW="md"
+        w={["100%", "80%", "60%"]}
         shadow="xl"
         borderRadius="md"
         py="8"
         px="8"
         borderWidth={1}
-      >
-        {props.children}
-      </Container>
+        {...props}
+      />
     </>
   );
 };
