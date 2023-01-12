@@ -1,27 +1,7 @@
 import Link from "next/link";
-import {
-  Box,
-  Button as ChakraButton,
-  ButtonGroup,
-  Flex,
-  Heading,
-  Spacer,
-} from "@chakra-ui/react";
-import { FC, PropsWithChildren } from "react";
-
-type ButtonProps = PropsWithChildren<{
-  href: string;
-}>;
-
-const Button = (props: ButtonProps) => {
-  return (
-    <Link href={props.href} passHref legacyBehavior>
-      <ChakraButton as="a" variant="ghost">
-        {props.children}
-      </ChakraButton>
-    </Link>
-  );
-};
+import { Box, ButtonGroup, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { FC } from "react";
+import ButtonLink from "./ButtonLink";
 
 type Props = {};
 
@@ -37,8 +17,12 @@ const Header: FC<Props> = (props) => {
       </Box>
       <Spacer />
       <ButtonGroup colorScheme="gray">
-        <Button href="/sign-in">Masuk</Button>
-        <Button href="/register">Daftar</Button>
+        <ButtonLink variant="ghost" href="/sign-in">
+          Masuk
+        </ButtonLink>
+        <ButtonLink variant="ghost" href="/register">
+          Daftar
+        </ButtonLink>
       </ButtonGroup>
     </Flex>
   );

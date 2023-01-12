@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { Box, Button, Image } from "@chakra-ui/react";
+import { FaMapMarked } from "react-icons/fa";
 import Question from "../../types/Question";
 import Map from "./Map";
 
@@ -17,6 +18,7 @@ const Core: FC<Props> = ({ question, onAnswer = () => {} }) => {
       justifyContent="center"
     >
       <Button
+        leftIcon={<FaMapMarked />}
         zIndex={3}
         position="absolute"
         bottom={20}

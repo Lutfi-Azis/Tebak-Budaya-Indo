@@ -44,6 +44,9 @@ class Player extends Component<Props, State> {
     } else this.setState({ index: this.state.index + 1 });
   };
 
+  handleReplay = () =>
+    this.setState({ index: 0, answers: [], status: Status.Unstarted });
+
   render() {
     switch (this.state.status) {
       case Status.Unstarted:
@@ -60,6 +63,7 @@ class Player extends Component<Props, State> {
           <EndScreen
             answers={this.state.answers}
             questions={this.props.questions}
+            onReplay={this.handleReplay}
           />
         );
     }
