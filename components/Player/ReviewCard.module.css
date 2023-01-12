@@ -1,0 +1,10 @@
+.reviewBadge {
+  position: absolute;
+  width: 15%;
+  min-width: 40px;
+  top: 20px;
+  left: 20px;
+  stroke-width: 8px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
