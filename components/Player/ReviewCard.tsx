@@ -8,17 +8,13 @@ import {
   Tag,
   TagLeftIcon,
   TagLabel,
-  chakra,
+  Icon,
 } from "@chakra-ui/react";
 import { FC } from "react";
+import { FaClipboardList, FaCheck } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 import Question from "../../types/Question";
 import { toTitleCase } from "../../utils";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheck,
-  faXmark,
-  faClipboardList,
-} from "@fortawesome/free-solid-svg-icons";
 import styles from "./ReviewCard.module.css";
 
 type Props = { index: number; question: Question; answer: string };
@@ -33,7 +29,6 @@ const ReviewCard: FC<Props> = (props) => {
   const stylizedCorrectAnswer = toTitleCase(
     props.question.answer.replaceAll("-", " ")
   );
-  const Icon = chakra(FontAwesomeIcon);
 
   return (
     <Card borderColor={border} borderWidth={3}>
@@ -44,9 +39,7 @@ const ReviewCard: FC<Props> = (props) => {
         />
       </CardBody>
       <Tag colorScheme="gray" size="lg">
-        <TagLeftIcon>
-          <Icon icon={faClipboardList} />
-        </TagLeftIcon>
+        <TagLeftIcon as={FaClipboardList} />
         <TagLabel>{stylizedCorrectAnswer}</TagLabel>
       </Tag>
       <CardFooter>
@@ -55,10 +48,10 @@ const ReviewCard: FC<Props> = (props) => {
         </Heading>
       </CardFooter>
       <Icon
-        bgColor={border}
+        boxSize={8}
         color={heading}
         className={styles.reviewBadge}
-        icon={isCorrect ? faCheck : faXmark}
+        as={isCorrect ? FaCheck : ImCross}
       />
     </Card>
   );
