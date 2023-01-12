@@ -1,0 +1,12 @@
+.nav {
+  position: absolute !important;
+  top: 50%;
+}
+
+.next {
+  right: -20px;
+}
+
+.back {
+  left: -20px;
+}

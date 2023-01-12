@@ -1,0 +1,8 @@
+.head {
+  text-align: center;
+  background-image: url("/assets/images/bg-indonesia.png");
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  padding: 10px 0;
+}
