@@ -44,8 +44,10 @@ class Player extends Component<Props, State> {
     } else this.setState({ index: this.state.index + 1 });
   };
 
-  handleReplay = () =>
+  handleReplay = () => {
     this.setState({ index: 0, answers: [], status: Status.Unstarted });
+    this.props.onStatusChange?.(Status.Unstarted);
+  };
 
   render() {
     switch (this.state.status) {
