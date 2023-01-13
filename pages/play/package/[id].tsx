@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: (await getQuestionPackages("area")).map((p) => ({
+    paths: (await getQuestionPackages()).map((p) => ({
       params: { id: p.id.toString() },
     })),
     fallback: false,

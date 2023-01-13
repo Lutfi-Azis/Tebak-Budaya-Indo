@@ -34,6 +34,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
       {
         params: { type: "area" },
       },
+      {
+        params: { type: "clothing" },
+      },
     ],
     fallback: false,
   };

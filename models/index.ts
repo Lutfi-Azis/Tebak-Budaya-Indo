@@ -4,9 +4,11 @@ import QuestionPackage from "../types/QuestionPackage";
 import { get, runQuery } from "./utils";
 
 export async function getQuestionPackages(
-  gamemode: string
+  gamemode?: string
 ): Promise<QuestionPackage[]> {
-  return get({ table: "question_package", where: { gamemode: gamemode } });
+  if (gamemode)
+    return get({ table: "question_package", where: { gamemode: gamemode } });
+  return get({ table: "question_package" });
 }
 
 export async function getQuestionsOfPackage(
