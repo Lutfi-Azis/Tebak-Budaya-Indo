@@ -17,7 +17,8 @@ export default function Home() {
         <Wrap spacing={4} justify="center">
           <GamemodeCard
             src={
-              process.env.NEXT_PUBLIC_HOST + "/assets/images/bali-building.jpg"
+              process.env.NEXT_PUBLIC_HOST +
+              "/assets/images/places/bali-temple.jpg"
             }
             alt="Gedung tradisional di Bali."
             title="Tebak Wilayah"
@@ -26,7 +27,7 @@ export default function Home() {
           <GamemodeCard
             src={
               process.env.NEXT_PUBLIC_HOST +
-              "/assets/images/traditional-dress.jpg"
+              "/assets/images/clothing/bali couple.jpg"
             }
             alt="Sepasang pria dan wanita dengan pakaian adat."
             title="Tebak Baju Adat"
