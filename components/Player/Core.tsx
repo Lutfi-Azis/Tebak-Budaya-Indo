@@ -24,6 +24,8 @@ const Core: FC<Props> = ({ question, onAnswer = () => {} }) => {
         bottom={20}
         right={20}
         size="lg"
+        borderColor="white"
+        borderWidth={2}
         onClick={toggleMapVisibility}
       >
         PETA
