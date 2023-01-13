@@ -20,7 +20,7 @@ const PROVINCES = [
   "gorontalo",
   "jambi",
   "kalimantan-tengah",
-  "irian-jaya-barat",
+  "papua-barat",
   "sumatera-utara",
   "riau",
   "sulawesi-utara",
