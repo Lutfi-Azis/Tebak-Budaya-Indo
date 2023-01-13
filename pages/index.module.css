@@ -6,3 +6,15 @@
   background-repeat: no-repeat;
   padding: 10px 0;
 }
+
+.centerify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageBit {
+  border-radius: 5%;
+  border-width: 2px;
+  border-style: solid;
+}
