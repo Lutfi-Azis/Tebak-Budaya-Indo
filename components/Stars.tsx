@@ -11,11 +11,11 @@ const Stars: FC<Props> = ({ value, amount = 5 }) => {
   for (let i = 1; i <= amount; i++) {
     if (i <= amountFilled)
       starsElem.push(
-        <Icon boxSize={8} className={styles.starFilled} as={FaStar} />
+        <Icon key={i} boxSize={8} className={styles.starFilled} as={FaStar} />
       );
     else
       starsElem.push(
-        <Icon boxSize={8} className={styles.starUnfilled} as={FaStar} />
+        <Icon key={i} boxSize={8} className={styles.starUnfilled} as={FaStar} />
       );
   }
   return <>{starsElem}</>;
