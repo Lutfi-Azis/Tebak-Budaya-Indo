@@ -4,14 +4,22 @@ export const REVIEWS: Review[] = [
   {
     author: "Lutfi Azis",
     rating: 1,
-    comment: "Situs yang sangat bagus.",
+    comment:
+      "Situs ini bagus sekali. Sederhana, tetapi tidak terlalu sederhana." +
+      " Pemilihan warna yang elegan.",
     affiliation: "dinus.ac.id",
   },
   {
-    author: "Victor",
+    author: "Jokowi",
     rating: 0.8,
     comment:
-      "Ini adalah situs web yang luar biasa bagi saya untuk belajar tentang budaya Indonesia.",
-    affiliation: "france-visas.gouv.fr",
+      "Berangkat dari kekayaan kebudayaan dan kekayaan hayati kita, " +
+      "Indonesia mempunyai peluang besar untuk menumbuhkan ilmu" +
+      " pengetahuan yang berbasis dari peradaban Indonesia",
+  },
+  {
+    author: "Nugroho",
+    rating: 0.2,
+    comment: "Tidak terlalu bagus. 👎",
   },
 ];

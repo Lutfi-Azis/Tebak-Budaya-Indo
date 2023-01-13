@@ -34,7 +34,7 @@ const ReviewCarousel: FC<Props> = ({ reviews, autoplay = false }) => {
     <Card
       textAlign="center"
       shadow="lg"
-      h={240}
+      h={280}
       borderColor={border}
       borderWidth={2}
     >
