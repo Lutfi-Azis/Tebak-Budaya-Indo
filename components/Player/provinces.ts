@@ -5,7 +5,7 @@ const PROVINCES = [
   "jawa-tengah",
   "bengkulu",
   "banten",
-  "jakarta-raya",
+  "jakarta",
   "kalimantan-barat",
   "lampung",
   "sumatera-selatan",

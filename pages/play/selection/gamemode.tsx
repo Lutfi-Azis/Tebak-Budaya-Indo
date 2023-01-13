@@ -18,7 +18,7 @@ export default function Home() {
           <GamemodeCard
             src={
               process.env.NEXT_PUBLIC_HOST +
-              "/assets/images/places/bali-temple.jpg"
+              "/assets/images/places/bali temple.jpg"
             }
             alt="Gedung tradisional di Bali."
             title="Tebak Wilayah"

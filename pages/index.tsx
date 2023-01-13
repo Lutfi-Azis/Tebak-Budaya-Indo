@@ -78,7 +78,7 @@ export default function Home() {
           <Image
             src={
               process.env.NEXT_PUBLIC_HOST +
-              "/assets/images/places/bali-temple.jpg"
+              "/assets/images/places/bali temple.jpg"
             }
             alt="Sebuah bangunan tua di Bali"
             borderColor={imgBorder}

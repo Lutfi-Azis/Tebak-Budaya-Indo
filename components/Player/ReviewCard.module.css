@@ -3,3 +3,9 @@
   top: 20px;
   left: 20px;
 }
+
+.centerify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

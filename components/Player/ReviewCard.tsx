@@ -32,7 +32,7 @@ const ReviewCard: FC<Props> = (props) => {
 
   return (
     <Card borderColor={border} borderWidth={3}>
-      <CardBody padding={0}>
+      <CardBody padding={0} className={styles.centerify}>
         <Image
           src={process.env.NEXT_PUBLIC_HOST + props.question.imageSrc}
           alt={`Gambar di ${stylizedCorrectAnswer}`}
